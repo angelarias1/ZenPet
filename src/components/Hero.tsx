@@ -15,7 +15,7 @@ const Hero = () => {
         <p className="hero-phrase">Tu mascota en buenas manos</p>
         <p className="hero-subtext">Cuidamos con amor y experiencia</p>
         <a
-          href="https://wa.me/529991234567"
+          href="https://wa.me/5299912224567"
           className="hero-button"
           target="_blank"
           rel="noopener noreferrer"
