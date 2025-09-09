@@ -1,0 +1,76 @@
+.footer-dark {
+  background: #00c9a7; /* antes: #111 */
+  color: #000000; /* antes: #e0fdf9 */
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+
+.footer-brand span {
+  color: #ffffff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  color: #000000; /* antes: #e0fdf9 */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffffff; /* antes: #00c9a7 */
+}
+
+.footer-social {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  background: #ffffff; /* antes: #00c9a7 */
+  color: #000000;       /* antes: #fff */
+  border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1);
+  background: #e0e0e0; /* más suave que blanco puro para hover */
+}
+
+.footer-rights {
+  font-size: 0.85rem;
+  color: #000000; /* antes: #aaa */
+  margin-top: 1.5rem;
+}
