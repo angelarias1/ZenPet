@@ -1,84 +1,125 @@
 /* src/styles/ContactInfo.css */
 
+/* -------- Base (mobile-first) -------- */
 .contact-info {
-    padding: 5rem 2rem;
-    background-color: #f9fdfc;
-    text-align: center;
-  }
-  
-  .contact-title {
-    font-size: 2.5rem;
-    color: #00c9a7;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-subtitle {
-    font-size: 1.1rem;
-    color: #444;
+  padding: 3rem 1.25rem;               /* menos padding en móvil */
+  background-color: #f9fdfc;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+  color: #00c9a7;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.15;
+}
+
+.contact-subtitle {
+  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+  color: #444;
+  margin: 0 auto 2rem;
+  max-width: 52ch;                      /* limita ancho de lectura */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;           /* 1 columna en móvil */
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 0.25rem;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-card h4 {
+  margin-top: 0.75rem;
+  color: #00c9a7;
+  font-size: clamp(1rem, 2.8vw, 1.1rem);
+}
+
+.contact-card p {
+  margin-top: 0.35rem;
+  color: #444;
+  font-size: clamp(0.9rem, 2.6vw, 0.95rem);
+}
+
+.contact-gif {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 0.9rem;
+  border-radius: 12px;
+}
+
+/* Mapa */
+.contact-map {
+  background: white;
+  border-radius: 20px;
+  padding: 1.25rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 300px;                        /* más bajo en móvil */
+  border: none;
+  border-radius: 12px;
+}
+
+/* -------- >= 480px -------- */
+@media (min-width: 480px) {
+  .contact-info { padding: 3.5rem 1.5rem; }
+  .contact-map iframe { height: 320px; }
+}
+
+/* -------- >= 768px (tablets) -------- */
+@media (min-width: 768px) {
+  .contact-info { padding: 4rem 2rem; }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 2 columnas */
+    gap: 1.75rem;
     margin-bottom: 2.5rem;
   }
-  
+  .contact-card { padding: 1.75rem; }
+  .contact-gif { width: 60px; height: 60px; }
+  .contact-map { padding: 1.75rem; }
+  .contact-map iframe { height: 340px; }
+}
+
+/* -------- >= 900px (desktop) -------- */
+@media (min-width: 900px) {
+  .contact-info { padding: 5rem 2rem; }
   .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto 3rem auto;
-  }
-  
-  .contact-card {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    text-align: center; /* Asegura que todo esté centrado */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra verticalmente */
-  }
-  
-  
-  .contact-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .contact-card h4 {
-    margin-top: 1rem;
-    color: #00c9a7;
-    font-size: 1.1rem;
-  }
-  
-  .contact-card p {
-    margin-top: 0.3rem;
-    color: #444;
-    font-size: 0.95rem;
-  }
-  
-  .contact-gif {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    border-radius: 12px;
-  }
-  
-  
-  /* Estilo del mapa */
-  .contact-map {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
     max-width: 900px;
-    margin: 0 auto;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+    margin-bottom: 3rem;
   }
-  
-  .contact-map iframe {
-    width: 100%;
-    height: 350px;
-    border: none;
-    border-radius: 12px;
-  }
-  
+  .contact-card { padding: 2rem; }
+  .contact-gif { width: 64px; height: 64px; }
+  .contact-map { padding: 2rem; max-width: 900px; }
+  .contact-map iframe { height: 350px; }
+}
+
+/* Accesibilidad / Motion-safe */
+@media (prefers-reduced-motion: reduce) {
+  .contact-card { transition: none; }
+  .contact-card:hover { transform: none; }
+}
